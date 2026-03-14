@@ -26,7 +26,7 @@ module Legion
           def challenge!(strength: 0.5)
             effective = (strength * (1.0 - @inertia)).round(10)
             if effective > @conviction * 0.5
-              @conviction = (@conviction - effective * 0.3).clamp(0.0, 1.0).round(10)
+              @conviction = (@conviction - (effective * 0.3)).clamp(0.0, 1.0).round(10)
               @challenges_accepted += 1
               @inertia = (@inertia - INERTIA_REDUCTION_RATE).clamp(0.0, 1.0).round(10)
               :accepted

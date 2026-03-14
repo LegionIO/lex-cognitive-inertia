@@ -72,13 +72,13 @@ module Legion
 
           def inertia_report
             {
-              total_beliefs:      @beliefs.size,
-              entrenched_count:   entrenched_beliefs.size,
-              flexible_count:     flexible_beliefs.size,
-              average_inertia:    average_inertia,
-              average_conviction: average_conviction,
+              total_beliefs:       @beliefs.size,
+              entrenched_count:    entrenched_beliefs.size,
+              flexible_count:      flexible_beliefs.size,
+              average_inertia:     average_inertia,
+              average_conviction:  average_conviction,
               overall_flexibility: overall_flexibility,
-              most_resistant:     most_resistant(limit: 3).map(&:to_h)
+              most_resistant:      most_resistant(limit: 3).map(&:to_h)
             }
           end
 

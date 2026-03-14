@@ -45,9 +45,7 @@ RSpec.describe Legion::Extensions::CognitiveInertia::Helpers::Belief do
     it 'accepted challenges reduce conviction' do
       original = belief.conviction
       belief.challenge!(strength: 0.9)
-      if belief.challenges_accepted > 0
-        expect(belief.conviction).to be < original
-      end
+      expect(belief.conviction).to be < original if belief.challenges_accepted > 0
     end
 
     it 'resisted challenges increase inertia' do
@@ -60,9 +58,7 @@ RSpec.describe Legion::Extensions::CognitiveInertia::Helpers::Belief do
     it 'accepted challenges reduce inertia' do
       original_inertia = belief.inertia
       belief.challenge!(strength: 0.9)
-      if belief.challenges_accepted > 0
-        expect(belief.inertia).to be < original_inertia
-      end
+      expect(belief.inertia).to be < original_inertia if belief.challenges_accepted > 0
     end
   end
 
